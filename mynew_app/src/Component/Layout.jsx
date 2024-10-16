@@ -1,20 +1,54 @@
-import { Link } from "react-router-dom"
+import { Link,Outlet } from "react-router-dom"
 
 function Layout(){
+    // return(
+    //     <>
+    //     <nav>
+    //         <ul>
+    //             <li>
+    //                 <Link to="/">Home page</Link> 
+    //             </li>
+    //             <li>
+    //                 <Link to="/Contact">Contact</Link>
+    //             </li>
+    //         </ul>
+    //     </nav>
+    //     <outlet/>
+    //     </>
+    // ) 
     return(
         <>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home page</Link> 
+        <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div className="container-fluid">
+            <a className="navbar-brand" href="#">Logo</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                <Link to="/" className="nav-link" >Home </Link> 
                 </li>
-                <li>
-                    <Link to="/Contact">Contact</Link>
+                <li className="nav-item">
+                <Link to="/Contact" className="nav-link">Contact</Link>
                 </li>
+                <li className="nav-item">
+                <Link to="/About" className="nav-link">About</Link>
+                </li>
+
+                
             </ul>
+            </div>
+        </div>
         </nav>
-        <outlet/>
+        <Outlet/>
+
         </>
     )
-}
+        
+ 
+    }
+   
+
+
 export default Layout
